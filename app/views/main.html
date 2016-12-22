@@ -1,0 +1,33 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2 data-ng-if="!movieSearched">All " The.. " Movies</h2>
+        <h2 data-ng-if="movieSearched">{{movieSearched}} Movies</h2>
+    </div>
+    <form name="searchForm">
+        <div class="panel-body panel-collapse">
+            <p class="lead">
+                <br>
+                Search: <input type="text" name="searchForm.title" data-ng-model="search_title" required/>
+                <a class="srchbtn btn-md btn-success" data-ng-disabled="searchForm.$invalid || loading"
+                   data-ng-click="searchMovies()">Search <span class="glyphicon glyphicon-ok"></span></a>
+            </p>
+        </div>
+    </form>
+</div>
+
+<div class="row marketing">
+    <div data-ng-if="movies && !loading">
+        <pagination-panel next-page="nextPage()" prev-page="prevPage()" goto-page="gotoPage(gotoPageNum)"
+                          last-page="lastPage" current-page="currentPage"/>
+        <movie-card data-ng-repeat="movie in movies" movie="movie" />
+        <pagination-panel next-page="nextPage()" prev-page="prevPage()" goto-page="gotoPage(gotoPageNum)"
+                          last-page="lastPage" current-page="currentPage"/>
+
+    </div>
+    <div data-ng-if="loading">
+        Loading...
+    </div>
+    <div data-ng-if="error && !loading">
+        {{errorMessg}}
+    </div>
+</div>

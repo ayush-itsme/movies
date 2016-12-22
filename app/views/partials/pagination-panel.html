@@ -1,0 +1,20 @@
+<div class="row pagination-panel">
+    <h3>
+        <div class="col-sm-2">
+            <button data-ng-disabled="currentPage==1" type="button" class="btn btn-default btn-md"
+                    data-ng-click="gotoPage({gotoPageNum:1})">1st Page</button>
+        </div>
+        <div class="col-sm-2">
+            <button data-ng-disabled="currentPage==1" type="button" class="btn btn-default btm-md"
+                    data-ng-click="prevPage()"><span class="glyphicon glyphicon-arrow-left"/> Previous Page</button>
+        </div>
+        <div class="col-sm-2 col-sm-offset-4">
+            <button data-ng-disabled="currentPage==lastPage" type="button" class="btn btn-default btn-md"
+                    data-ng-click="nextPage()">Next Page <span class="glyphicon glyphicon-arrow-right"/></button>
+        </div>
+        <div class="col-sm-2">
+            <button data-ng-disabled="currentPage==lastPage" type="button" class="btn btn-default btm-md"
+                    data-ng-click="gotoPage({gotoPageNum:lastPage})">Last Page</button>
+        </div>
+    </h3>
+</div>

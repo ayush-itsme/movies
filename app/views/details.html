@@ -1,0 +1,39 @@
+<div data-ng-if="movie">
+<div class="row">
+    <div class="col-sm-5">
+        <img data-ng-src="{{movie.Poster}}" alt="{{movie.Title}}"/>
+    </div>
+    <div class="col-sm-6 col-sm-offset-1">
+        <h4><b>{{movie.Title}}</b> ({{movie.Year}})</h4>
+        <p data-ng-if="movie.Genre">Genre: {{movie.Genre}}</p>
+        <p data-ng-if="movie.Released">Released: {{movie.Released}}</p>
+        <p data-ng-if="movie.Runtime">Runtime: {{movie.Runtime}}</p>
+        <p data-ng-if="movie.Rated">Rated: {{movie.Rated}}</p>
+        <p data-ng-if="movie.Language">Language: {{movie.Language}}</p>
+        <p data-ng-if="movie.Country">Country: {{movie.Country}}</p>
+        <p data-ng-if="movie.Awards">Awards: {{movie.Awards}}</p>
+        <p data-ng-if="movie.Metascore">Metascore: {{movie.Metascore}}</p>
+        <p data-ng-if="movie.imdbRating">imdb Rating: {{movie.imdbRating}}</p>
+        <p data-ng-if="movie.tomatoConsensus">Rottten Tomato Consensus: {{movie.tomatoConsensus}}</p>
+        <p data-ng-if="movie.tomatoURL">Rotten tomato URL: <a href="{{movie.tomatoURL}}">{{movie.tomatoURL}}</a></p>
+        <p><fav-card movie="movie"/></p>
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-10 col-sm-offset-1">
+        <p data-ng-if="movie.Director">Director: {{movie.Director}}</p>
+        <p data-ng-if="movie.Writer">Writer: {{movie.Writer}}</p>
+        <p data-ng-if="movie.Actors">Actors: {{movie.Actors}}</p>
+    </div>
+</div>
+<div class="row" data-ng-if="movie.Plot">
+    <div class="col-sm-10 col-sm-offset-1">
+        Plot:
+        <p>{{movie.Plot}}</p>
+
+        <br>
+    </div>
+</div>
+
+</div>

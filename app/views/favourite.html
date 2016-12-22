@@ -1,0 +1,14 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2>All Fourite Movies</h2>
+    </div>
+</div>
+
+<div class="row marketing">
+    <div data-ng-if="movies.length > 0">
+        <movie-card data-ng-repeat="movie in movies" movie="movie" />
+    </div>
+    <div data-ng-if="movies.length == 0">
+        No movies.
+    </div>
+</div>
